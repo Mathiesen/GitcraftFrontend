@@ -1,0 +1,8 @@
+<mat-list class="list" role="list">
+  <div *ngFor="let character of characters">
+    <app-list-item
+      [name]="character.name"
+      [race]="character.race"
+      [image]="character.image"></app-list-item>
+  </div>
+</mat-list>
