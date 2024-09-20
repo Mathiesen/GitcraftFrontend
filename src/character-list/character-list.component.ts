@@ -26,8 +26,18 @@ export class CharacterListComponent {
   ngOnInit() {
     this.characterService
       .getCharacters()
-      .subscribe(response => this.characters = response);
+      .subscribe({
+        next:(response) => {
+          if (response.status === 200) {
+            this.characters = response.body
+          }
+        },
+        error:(err) => {
+          console.log(err)
+        }
+      });
   }
 
   protected readonly of = of;
 }
+

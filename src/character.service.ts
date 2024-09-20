@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {CharacterModel} from "./model/character.model";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -8,15 +8,17 @@ import {Observable} from "rxjs";
 })
 export class CharacterService {
   characters: CharacterModel[] = []
+  readonly baseUrl: string = 'http://localhost:5190/api/Character/'
 
   constructor(private http: HttpClient) {
   }
 
-  getCharacters(): Observable<CharacterModel[]> {
-    return this.http.get<CharacterModel[]>('http://localhost:5190/api/Character/GetCharacters');
+  getCharacters(): Observable<HttpResponse<any>> {
+    return this.http
+      .get(this.baseUrl + 'GetCharacters', {observe: 'response'});
   }
 
-  addCharacter(character:CharacterModel) {
-    this.characters.push(character);
+  addCharacter(character:CharacterModel): Observable<any> {
+    return this.http.post(this.baseUrl + 'Create', character, {observe: 'response'})
   }
 }

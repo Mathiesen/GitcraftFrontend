@@ -1,17 +1,22 @@
 <form>
   <mat-form-field>
     <mat-label>Name:</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="charName" name="name">
   </mat-form-field>
   <br>
   <mat-form-field>
-    <mat-label>Level:</mat-label>
-    <input matInput>
+    <mat-label>Race:</mat-label>
+    <input matInput [(ngModel)]="charRace" name="race">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Class:</mat-label>
+    <input matInput [(ngModel)]="className" name="class">
   </mat-form-field>
   <br>
   <mat-form-field>
     <mat-label>Image url:</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="imageUrl" name="image">
   </mat-form-field>
 </form>
-<button mat-flat-button>Add</button>
+<button (click)="addCharacter()" mat-flat-button>Add</button>

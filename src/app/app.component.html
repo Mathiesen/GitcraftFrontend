@@ -1,6 +1,8 @@
-<a routerLink="CharacterList">Character list</a>
-<br>
-<a routerLink="Home">Home</a>
-
-
-<router-outlet></router-outlet>
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+    <app-info-box style="width: 100%; height: 100%;"></app-info-box>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-game-area style="width: 100%;"></app-game-area>
+  </mat-grid-tile>
+</mat-grid-list>
