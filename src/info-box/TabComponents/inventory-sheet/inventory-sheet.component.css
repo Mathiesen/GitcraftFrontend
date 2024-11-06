@@ -1,0 +1,22 @@
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* creates 8 columns */
+  grid-gap: 10px; /* space between items */
+  padding: 10px; /* padding around the grid */
+  max-height: 100%; /* limit height to the tab's content area */
+  overflow-y: auto; /* enable scrolling if content is too tall */
+}
+
+.inventory-item {
+  width: 100%; /* each item fills the cell */
+  height: 100%; /* added to maintain aspect ratio within cell */
+  display: flex; /* using flex to center the image in the cell */
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+}
+
+.inventory-item img {
+  max-width: 100%; /* scales image down to fit the cell width */
+  max-height: 100%; /* scales image down to fit the cell height */
+  object-fit: contain; /* prevents image distortion */
+}

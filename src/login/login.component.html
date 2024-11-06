@@ -1,0 +1,15 @@
+<form>
+  <mat-form-field>
+    <mat-label>Username:</mat-label>
+    <input matInput [(ngModel)]="username" name="username">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Password:</mat-label>
+    <input type="password" matInput [(ngModel)]="password" name="password">
+  </mat-form-field>
+</form>
+<button (click)="login()" mat-flat-button>Login</button>
+<br>
+<br>
+<mat-label>{{password}}</mat-label>
