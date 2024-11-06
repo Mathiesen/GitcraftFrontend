@@ -1,0 +1,5 @@
+.textbox-container {
+  display: flex;
+  height: 100%; /* Adjust the height to match your specific needs */
+  width: 100%; /* Adjust the width to match your specific needs */
+}

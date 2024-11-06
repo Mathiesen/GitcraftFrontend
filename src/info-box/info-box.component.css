@@ -1,3 +1,9 @@
-mat-grid-tile {
+.tab-container {
+  /*display: flex;*/
+  /*height: 100%;
+  width: 100%; */
+}
 
+mat-card {
+  height: 100%;
 }

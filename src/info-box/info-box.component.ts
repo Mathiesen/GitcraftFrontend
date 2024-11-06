@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatCard} from "@angular/material/card";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {CharacterSheetComponent} from "../character-sheet/character-sheet.component";
+import {CharacterSheetComponent} from "./TabComponents/character-sheet/character-sheet.component";
+import {InventorySheetComponent} from "./TabComponents/inventory-sheet/inventory-sheet.component";
+import {MatLabel} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-info-box',
@@ -10,11 +12,18 @@ import {CharacterSheetComponent} from "../character-sheet/character-sheet.compon
     MatCard,
     MatTabGroup,
     MatTab,
-    CharacterSheetComponent
+    CharacterSheetComponent,
+    InventorySheetComponent,
+    MatLabel
   ],
   templateUrl: './info-box.component.html',
   styleUrl: './info-box.component.css'
 })
-export class InfoBoxComponent {
+export class InfoBoxComponent implements OnInit{
 
+@Input() userId: string = "";
+
+  ngOnInit(): void {
+    console.log(this.userId);
+  }
 }
